@@ -25,7 +25,8 @@
         scope.titleLabel = scope.inputObj.titleLabel ? scope.inputObj.titleLabel : 'Number Picker';
         scope.setLabel = scope.inputObj.setLabel ? scope.inputObj.setLabel : 'Set';
         scope.closeLabel = scope.inputObj.closeLabel ? scope.inputObj.closeLabel : 'Close';
-        scope.decimalStep = scope.inputObj.step ? scope.inputObj.step : .25;
+        scope.decimalStep = scope.inputObj.decimalStep ? scope.inputObj.decimalStep : .25;
+        scope.decimalCharacter = scope.inputObj.decimalCharacter ? scope.inputObj.decimalCharacter : '.';
         scope.setButtonType = scope.inputObj.setButtonType ? scope.inputObj.setButtonType : 'button-positive';
         scope.closeButtonType = scope.inputObj.closeButtonType ? scope.inputObj.closeButtonType : 'button-stable';
 

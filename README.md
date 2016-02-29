@@ -37,6 +37,7 @@ $scope.numberPickerObject = {
     inputValue: 0, //Optional
     minValue: -9007199254740991,
     maxValue: 9007199254740991,
+    decimalCharacter: '.',  //Optional
     decimalStep: 0.25,  //Optional
     format: "DECIMAL",  //Optional - "WHOLE" or "DECIMAL"
     titleLabel: 'Number Picker',  //Optional
@@ -52,7 +53,11 @@ $scope.numberPickerObject = {
 
 ##Versions:
 
-### 1) v1.0.0
+### 1) v1.0.1
+ - Fixed decimalStep issue
+ - Added functionality to allow control over character used for decimal place ('decimalCharacter').
+
+### 2) v1.0.0
 Number picker functionality has been implemented, and can be installed with 
 
 bower install ionic-numberpicker --save
