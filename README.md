@@ -52,7 +52,7 @@ $scope.numberPickerObject = {
 
 ##Versions:
 
-### 1) v0.1.0
+### 1) v1.0.0
 Number picker functionality has been implemented, and can be installed with 
 
 bower install ionic-numberpicker --save
