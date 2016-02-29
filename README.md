@@ -63,4 +63,4 @@ bower install ionic-numberpicker --save
 ##Contact:
 email : admin@milkcan.io
 
-Rate it or Comment : http://market.ionic.io/plugins/numberpicker
+Rate it or Comment : http://market.ionic.io/plugins/ionic-numberpicker
