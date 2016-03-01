@@ -50,6 +50,17 @@ $scope.numberPickerObject = {
   }
 };
 ````
+5) Example directive use in page template
+
+````html
+
+<ionic-numberpicker input-obj="numberPickerObject">
+  <button class="button button-positive order-button">
+    <i class="ion-archive"></i>
+  </button> {{ inputNumber }}
+</ionic-numberpicker>
+
+````
 
 ##Versions:
 
