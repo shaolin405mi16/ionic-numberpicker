@@ -46,8 +46,8 @@ $scope.numberPickerObject = {
     setButtonType: 'button-positive',  //Optional
     closeButtonType: 'button-stable',  //Optional
     callback: function (val) {    //Mandatory
-    timePickerCallback(val);
-  }
+      numberPickerCallback(val);
+    }
 };
 ````
 5) Example directive use in page template
