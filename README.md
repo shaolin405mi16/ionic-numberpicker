@@ -37,7 +37,7 @@ $scope.numberPickerObject = {
     inputValue: 0, //Optional
     minValue: -9007199254740991,
     maxValue: 9007199254740991,
-    decimalCharacter: '.',  //Optional
+    precision: 3,  //Optional
     decimalStep: 0.25,  //Optional
     format: "DECIMAL",  //Optional - "WHOLE" or "DECIMAL"
     titleLabel: 'Number Picker',  //Optional
@@ -46,32 +46,19 @@ $scope.numberPickerObject = {
     setButtonType: 'button-positive',  //Optional
     closeButtonType: 'button-stable',  //Optional
     callback: function (val) {    //Mandatory
-      numberPickerCallback(val);
-    }
+    timePickerCallback(val);
+  }
 };
-````
-5) Example directive use in page template
-
-````html
-
-<ionic-numberpicker input-obj="numberPickerObject">
-  <button class="button button-positive order-button">
-    <i class="ion-archive"></i>
-  </button> {{ inputNumber }}
-</ionic-numberpicker>
-
 ````
 
 ##Versions:
 
-### 1) v1.0.1
- - Fixed decimalStep issue
- - Added functionality to allow control over character used for decimal place ('decimalCharacter').
+### 2) v1.1
+- Fixed issue with floating point math
+- Added support for negative numbers
 
-### 2) v1.0.0
-Number picker functionality has been implemented, and can be installed with 
-
-bower install ionic-numberpicker --save
+### 1) v1.0
+- Number picker functionality has been implemented
 
 ##License:
 [MIT](https://github.com/milkcan/ionic-numberpicker/blob/master/LICENSE.MD "MIT")
@@ -79,4 +66,4 @@ bower install ionic-numberpicker --save
 ##Contact:
 email : admin@milkcan.io
 
-Rate it or Comment : http://market.ionic.io/plugins/ionic-numberpicker
+Rate it or Comment : http://market.ionic.io/plugins/numberpicker
