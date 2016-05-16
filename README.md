@@ -64,7 +64,7 @@ $scope.numberPickerObject = {
 [MIT](https://github.com/milkcan/ionic-numberpicker/blob/master/LICENSE.MD "MIT")
 
 ##Contact:
-email : admin@milkcan.io
+email : matt@milkcan.io
 
 ##Other Links:
 - [GitHub](https://github.com/milkcan/ionic-numberpicker)
