@@ -66,4 +66,6 @@ $scope.numberPickerObject = {
 ##Contact:
 email : admin@milkcan.io
 
-Rate it or Comment : http://market.ionic.io/plugins/numberpicker
+##Other Links:
+- [GitHub](https://github.com/milkcan/ionic-numberpicker)
+- Rate it or Comment : [Ionic Marketplace](http://market.ionic.io/plugins/numberpicker)
