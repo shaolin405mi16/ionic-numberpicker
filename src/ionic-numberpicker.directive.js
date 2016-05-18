@@ -148,7 +148,7 @@
                   onTap: function (e) {
                     scope.loadingContent = true;
         
-                    scope.numericValue = scope.wholeNumber + scope.decimalNumber;
+                    scope.numericValue = Number(scope.wholeNumber) + Number(strip(scope.decimalNumber, scope.precision));
                     scope.inputObj.callback(scope.numericValue);
                   }
                 }
