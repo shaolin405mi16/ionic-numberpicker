@@ -160,7 +160,7 @@
             //Get Values from Initial Number
             scope.wholeNumber = findWholeNumber(scope.inputValue);
             scope.decimalNumber = 0;
-            scope.numericValue = findWholeNumber(scope.wholeNumber) + strip(scope.decimalNumber, scope.precision);
+            scope.numericValue = Number(findWholeNumber(scope.wholeNumber)) + Number(strip(scope.decimalNumber, scope.precision));
 
             $ionicPopup.show({
               templateUrl: 'ionic-numberpicker-whole.html',
