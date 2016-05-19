@@ -34,7 +34,7 @@
         scope.wholeNumber = 0;
         scope.decimalNumber = 0;
         scope.isNegative = false;
-        scope.numericValue = scope.wholeNumber + '.' + scope.decimalNumber;
+        scope.numericValue = Number(scope.wholeNumber + '.' + scope.decimalNumber);
 
         //Changing the style
         scope.changeFormat = function () {
