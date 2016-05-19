@@ -40,6 +40,7 @@ $scope.numberPickerObject = {
     precision: 3,  //Optional
     decimalStep: 0.25,  //Optional
     format: "DECIMAL",  //Optional - "WHOLE" or "DECIMAL"
+    unit: "",  //Optional - "m", "kg", "℃" or whatever you want
     titleLabel: 'Number Picker',  //Optional
     setLabel: 'Set',  //Optional
     closeLabel: 'Close',  //Optional
