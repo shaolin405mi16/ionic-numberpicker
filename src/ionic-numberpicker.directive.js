@@ -23,6 +23,7 @@
         scope.maxValue = typeof(scope.inputObj.maxValue !== 'undefined') ? scope.inputObj.maxValue : 9007199254740991;
         scope.precision = scope.inputObj.precision ? scope.inputObj.precision : 3;
         scope.format = scope.inputObj.format ? scope.inputObj.format : 'DECIMAL';
+        scope.unit = scope.inputObj.unit ? scope.inputObj.unit : '';
         scope.titleLabel = scope.inputObj.titleLabel ? scope.inputObj.titleLabel : 'Number Picker';
         scope.setLabel = scope.inputObj.setLabel ? scope.inputObj.setLabel : 'Set';
         scope.closeLabel = scope.inputObj.closeLabel ? scope.inputObj.closeLabel : 'Close';
