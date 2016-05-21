@@ -35,6 +35,7 @@
         scope.wholeNumber = 0;
         scope.decimalNumber = 0;
         scope.isNegative = false;
+        scope.sign = '';
         scope.numericValue = Number(scope.wholeNumber + '.' + scope.decimalNumber);
 
         //Changing the style
@@ -55,6 +56,11 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMax();
+          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
+          if (document.getElementById("decimalNumber")) {
+            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
+          }
+          document.getElementById("sign").innerHTML = scope.sign;
         };
 
         //Decreasing the whole number
@@ -64,6 +70,11 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMin();
+          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
+          if (document.getElementById("decimalNumber")) {
+            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
+          }
+          document.getElementById("sign").innerHTML = scope.sign;
         };
 
         //Increasing the decimal number
@@ -73,6 +84,11 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMax();
+          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
+          if (document.getElementById("decimalNumber")) {
+            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
+          }
+          document.getElementById("sign").innerHTML = scope.sign;
         };
 
         //Decreasing the decimal number
@@ -82,6 +98,55 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMin();
+          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
+          if (document.getElementById("decimalNumber")) {
+            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
+          }
+          document.getElementById("sign").innerHTML = scope.sign;
+        };
+
+        scope.startWholeUp = function() {
+          scope.increaseWhole();
+          scope.intervalID = setInterval(function(){
+            scope.increaseWhole();
+          }, 100)
+        };
+
+        scope.stopWholeUp = function() {
+          clearInterval(scope.intervalID);
+        };
+
+        scope.startWholeDown = function() {
+          scope.decreaseWhole();
+          scope.intervalID = setInterval(function(){
+            scope.decreaseWhole();
+          }, 100)
+        };
+
+        scope.stopWholeDown = function() {
+          clearInterval(scope.intervalID);
+        };
+
+        scope.startDecimalUp = function() {
+          scope.increaseDecimal();
+          scope.intervalID = setInterval(function(){
+            scope.increaseDecimal();
+          }, 100)
+        };
+
+        scope.stopDecimalUp = function() {
+          clearInterval(scope.intervalID);
+        };
+
+        scope.startDecimalDown = function() {
+          scope.decreaseDecimal();
+          scope.intervalID = setInterval(function(){
+            scope.decreaseDecimal();
+          }, 100)
+        };
+
+        scope.stopDecimalDown = function() {
+          clearInterval(scope.intervalID);
         };
 
         function strip(number, precision) {
@@ -94,9 +159,11 @@
 
           if (number >= 0) {
             scope.isNegative = false;
+            scope.sign = '';
             returnVal = Math.floor(number);
           } else {
             scope.isNegative = true;
+            scope.sign = '-';
             returnVal = Math.ceil(number);
           }
 
@@ -150,7 +217,7 @@
                   onTap: function (e) {
                     scope.loadingContent = true;
         
-                    scope.numericValue = Number(scope.wholeNumber) + Number(strip(scope.decimalNumber, scope.precision));
+                    scope.numericValue = Number(scope.isNegative ? -scope.wholeNumber : scope.wholeNumber) + Number(strip(scope.decimalNumber, scope.precision));
                     scope.inputObj.callback(scope.numericValue);
                   }
                 }
@@ -182,7 +249,7 @@
                   onTap: function (e) {
                     scope.loadingContent = true;
 
-                    scope.inputObj.callback(scope.wholeNumber);
+                    scope.inputObj.callback(scope.isNegative ? -scope.wholeNumber : scope.wholeNumber);
                   }
                 }
               ]
