@@ -49,6 +49,14 @@
           return sValue.substring(index + 1);
         }
 
+        scope.updateDisplay = function() {
+          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
+          if (document.getElementById("decimalNumber")) {
+            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
+          }
+          document.getElementById("sign").innerHTML = scope.sign;
+        };
+
         //Increasing the whole number
         scope.increaseWhole = function () {
           scope.numericValue += 1;
@@ -56,11 +64,7 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMax();
-          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
-          if (document.getElementById("decimalNumber")) {
-            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
-          }
-          document.getElementById("sign").innerHTML = scope.sign;
+          scope.updateDisplay();
         };
 
         //Decreasing the whole number
@@ -70,11 +74,7 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMin();
-          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
-          if (document.getElementById("decimalNumber")) {
-            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
-          }
-          document.getElementById("sign").innerHTML = scope.sign;
+          scope.updateDisplay();
         };
 
         //Increasing the decimal number
@@ -84,11 +84,7 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMax();
-          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
-          if (document.getElementById("decimalNumber")) {
-            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
-          }
-          document.getElementById("sign").innerHTML = scope.sign;
+          scope.updateDisplay();
         };
 
         //Decreasing the decimal number
@@ -98,11 +94,7 @@
           scope.decimalNumber = strip(scope.numericValue % 1);
 
           scope.checkMin();
-          document.getElementById("wholeNumber").innerHTML = scope.wholeNumber;
-          if (document.getElementById("decimalNumber")) {
-            document.getElementById("decimalNumber").innerHTML = scope.decimalDisplay();
-          }
-          document.getElementById("sign").innerHTML = scope.sign;
+          scope.updateDisplay();
         };
 
         scope.startWholeUp = function() {
