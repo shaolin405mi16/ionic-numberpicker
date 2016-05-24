@@ -98,7 +98,6 @@
         };
 
         scope.startWholeUp = function() {
-          scope.increaseWhole();
           scope.intervalID = setInterval(function(){
             scope.increaseWhole();
           }, 100)
@@ -109,7 +108,6 @@
         };
 
         scope.startWholeDown = function() {
-          scope.decreaseWhole();
           scope.intervalID = setInterval(function(){
             scope.decreaseWhole();
           }, 100)
@@ -120,7 +118,6 @@
         };
 
         scope.startDecimalUp = function() {
-          scope.increaseDecimal();
           scope.intervalID = setInterval(function(){
             scope.increaseDecimal();
           }, 100)
@@ -131,7 +128,6 @@
         };
 
         scope.startDecimalDown = function() {
-          scope.decreaseDecimal();
           scope.intervalID = setInterval(function(){
             scope.decreaseDecimal();
           }, 100)
