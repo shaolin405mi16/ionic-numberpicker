@@ -184,6 +184,9 @@
         element.on("click", function () {
           if (scope.format == 'DECIMAL') {
 
+            //Reflect currentmost value (when the dialog opened twice)
+            scope.inputValue = scope.inputObj.inputValue ? scope.inputObj.inputValue : 0;
+
             //Get Values from Initial Number
             scope.wholeNumber = findWholeNumber(Number(scope.inputValue));
             scope.decimalNumber = scope.inputValue % 1;
@@ -217,6 +220,8 @@
             });
 
           } else {
+            //Reflect currentmost value (when the dialog opened twice)
+            scope.inputValue = scope.inputObj.inputValue ? scope.inputObj.inputValue : 0;
             //Get Values from Initial Number
             scope.wholeNumber = findWholeNumber(scope.inputValue);
             scope.decimalNumber = 0;
