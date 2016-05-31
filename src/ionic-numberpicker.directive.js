@@ -98,43 +98,59 @@
         };
 
         scope.startWholeUp = function() {
-          scope.intervalID = setInterval(function(){
-            scope.increaseWhole();
-          }, 100)
+          scope.increaseWhole();
+          scope.timeoutUpID = setTimeout(function() {
+            scope.intervalUpID = setInterval(function(){
+              scope.increaseWhole();
+            }, 100)
+          }, 1000)
         };
 
         scope.stopWholeUp = function() {
-          clearInterval(scope.intervalID);
+          clearTimeout(scope.timeoutUpID);
+          clearInterval(scope.intervalUpID);
         };
 
         scope.startWholeDown = function() {
-          scope.intervalID = setInterval(function(){
-            scope.decreaseWhole();
-          }, 100)
+          scope.decreaseWhole();
+          scope.timeoutDownID = setTimeout(function() {
+            scope.intervalDownID = setInterval(function(){
+              scope.decreaseWhole();
+            }, 100)
+          }, 1000)
         };
 
         scope.stopWholeDown = function() {
-          clearInterval(scope.intervalID);
+          clearTimeout(scope.timeoutlDownID);
+          clearInterval(scope.intervalDownID);
         };
 
         scope.startDecimalUp = function() {
-          scope.intervalID = setInterval(function(){
-            scope.increaseDecimal();
-          }, 100)
+          scope.increaseDecimal();
+          scope.timeoutUpID = setTimeout(function() {
+            scope.intervalUpID = setInterval(function(){
+              scope.increaseDecimal();
+            }, 100)
+          }, 1000)
         };
 
         scope.stopDecimalUp = function() {
-          clearInterval(scope.intervalID);
+          clearTimeout(scope.timeoutUpID);
+          clearInterval(scope.intervalUpID);
         };
 
         scope.startDecimalDown = function() {
-          scope.intervalID = setInterval(function(){
-            scope.decreaseDecimal();
-          }, 100)
+          scope.decreaseDecimal();
+          scope.timeoutDownID = setTimeout(function() {
+            scope.intervalDownID = setInterval(function(){
+              scope.decreaseDecimal();
+            }, 100)
+          }, 1000)
         };
 
         scope.stopDecimalDown = function() {
-          clearInterval(scope.intervalID);
+          clearTimeout(scope.timeoutDownID);
+          clearInterval(scope.intervalDownID);
         };
 
         function strip(number, precision) {
