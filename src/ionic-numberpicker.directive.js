@@ -97,19 +97,31 @@
           scope.updateDisplay();
         };
 
+        scope.startWholeUpPC = function() {
+          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+            scope.startWholeUp();
+          }
+        }
+
         scope.startWholeUp = function() {
           scope.increaseWhole();
           scope.timeoutUpID = setTimeout(function() {
             scope.intervalUpID = setInterval(function(){
               scope.increaseWhole();
             }, 100)
-          }, 1000)
+          }, 600)
         };
 
         scope.stopWholeUp = function() {
-          clearTimeout(scope.timeoutUpID);
           clearInterval(scope.intervalUpID);
+          clearTimeout(scope.timeoutUpID);
         };
+
+        scope.startWholeDownPC = function() {
+          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+            scope.startWholeDown();
+          }
+        }
 
         scope.startWholeDown = function() {
           scope.decreaseWhole();
@@ -117,13 +129,19 @@
             scope.intervalDownID = setInterval(function(){
               scope.decreaseWhole();
             }, 100)
-          }, 1000)
+          }, 600)
         };
 
         scope.stopWholeDown = function() {
-          clearTimeout(scope.timeoutDownID);
           clearInterval(scope.intervalDownID);
+          clearTimeout(scope.timeoutDownID);
         };
+
+        scope.startDecimalUpPC = function() {
+          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+            scope.startDecimalUp();
+          }
+        }
 
         scope.startDecimalUp = function() {
           scope.increaseDecimal();
@@ -131,13 +149,19 @@
             scope.intervalUpID = setInterval(function(){
               scope.increaseDecimal();
             }, 100)
-          }, 1000)
+          }, 600)
         };
 
         scope.stopDecimalUp = function() {
-          clearTimeout(scope.timeoutUpID);
           clearInterval(scope.intervalUpID);
+          clearTimeout(scope.timeoutUpID);
         };
+
+        scope.startDecimalDownPC = function() {
+          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+            scope.startDecimalDown();
+          }
+        }
 
         scope.startDecimalDown = function() {
           scope.decreaseDecimal();
@@ -145,12 +169,12 @@
             scope.intervalDownID = setInterval(function(){
               scope.decreaseDecimal();
             }, 100)
-          }, 1000)
+          }, 600)
         };
 
         scope.stopDecimalDown = function() {
-          clearTimeout(scope.timeoutDownID);
           clearInterval(scope.intervalDownID);
+          clearTimeout(scope.timeoutDownID);
         };
 
         function strip(number, precision) {
