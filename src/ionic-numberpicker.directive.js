@@ -121,7 +121,7 @@
         };
 
         scope.stopWholeDown = function() {
-          clearTimeout(scope.timeoutlDownID);
+          clearTimeout(scope.timeoutDownID);
           clearInterval(scope.intervalDownID);
         };
 
