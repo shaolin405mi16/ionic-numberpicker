@@ -98,7 +98,7 @@
         };
 
         scope.startWholeUpPC = function() {
-          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+          if(!ionic.Platform.isWebView()) {
             scope.startWholeUp();
           }
         }
@@ -118,7 +118,7 @@
         };
 
         scope.startWholeDownPC = function() {
-          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+          if(!ionic.Platform.isWebView()) {
             scope.startWholeDown();
           }
         }
@@ -138,7 +138,7 @@
         };
 
         scope.startDecimalUpPC = function() {
-          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+          if(!ionic.Platform.isWebView()) {
             scope.startDecimalUp();
           }
         }
@@ -158,7 +158,7 @@
         };
 
         scope.startDecimalDownPC = function() {
-          if(!ionic.Platform.isIOS() && !ionic.Platform.isAndroid()) {
+          if(!ionic.Platform.isWebView()) {
             scope.startDecimalDown();
           }
         }
