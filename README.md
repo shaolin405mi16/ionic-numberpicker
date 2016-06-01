@@ -52,7 +52,7 @@ $scope.numberPickerObject = {
 };
 ````
 
-5) (optional) install 'ngTouch' by https://github.com/nglar/ngTouch to get (pseudo-)autorepeat increment/decrement feature on touch panels.
+5) Install 'ngTouch' by https://github.com/nglar/ngTouch for touch panel devices.
 
 ##Versions:
 
