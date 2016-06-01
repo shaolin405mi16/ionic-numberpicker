@@ -32,6 +32,7 @@
         scope.setButtonType = scope.inputObj.setButtonType ? scope.inputObj.setButtonType : 'button-positive';
         scope.closeButtonType = scope.inputObj.closeButtonType ? scope.inputObj.closeButtonType : 'button-stable';
 
+        scope.useNgTouch = scope.inputObj.useNgTouch ? scope.inputObj.useNgTouch : false;
         scope.wholeNumber = 0;
         scope.decimalNumber = 0;
         scope.isNegative = false;
@@ -97,19 +98,15 @@
           scope.updateDisplay();
         };
 
-        scope.startWholeUpPC = function() {
-          if(!ionic.Platform.isWebView()) {
-            scope.startWholeUp();
+        scope.startWholeUp = function(d) {
+         if ((scope.useNgTouch && d == 'touch') || (!scope.useNgTouch && d == 'mouse')) {
+            scope.increaseWhole();
+            scope.timeoutUpID = setTimeout(function() {
+              scope.intervalUpID = setInterval(function(){
+                scope.increaseWhole();
+              }, 100)
+            }, 600)
           }
-        }
-
-        scope.startWholeUp = function() {
-          scope.increaseWhole();
-          scope.timeoutUpID = setTimeout(function() {
-            scope.intervalUpID = setInterval(function(){
-              scope.increaseWhole();
-            }, 100)
-          }, 600)
         };
 
         scope.stopWholeUp = function() {
@@ -117,19 +114,15 @@
           clearTimeout(scope.timeoutUpID);
         };
 
-        scope.startWholeDownPC = function() {
-          if(!ionic.Platform.isWebView()) {
-            scope.startWholeDown();
+        scope.startWholeDown = function(d) {
+         if ((scope.useNgTouch && d == 'touch') || (!scope.useNgTouch && d == 'mouse')) {
+            scope.decreaseWhole();
+            scope.timeoutDownID = setTimeout(function() {
+              scope.intervalDownID = setInterval(function(){
+                scope.decreaseWhole();
+              }, 100)
+            }, 600)
           }
-        }
-
-        scope.startWholeDown = function() {
-          scope.decreaseWhole();
-          scope.timeoutDownID = setTimeout(function() {
-            scope.intervalDownID = setInterval(function(){
-              scope.decreaseWhole();
-            }, 100)
-          }, 600)
         };
 
         scope.stopWholeDown = function() {
@@ -137,19 +130,15 @@
           clearTimeout(scope.timeoutDownID);
         };
 
-        scope.startDecimalUpPC = function() {
-          if(!ionic.Platform.isWebView()) {
-            scope.startDecimalUp();
+        scope.startDecimalUp = function(d) {
+         if ((scope.useNgTouch && d == 'touch') || (!scope.useNgTouch && d == 'mouse')) {
+            scope.increaseDecimal();
+            scope.timeoutUpID = setTimeout(function() {
+              scope.intervalUpID = setInterval(function(){
+                scope.increaseDecimal();
+              }, 100)
+            }, 600)
           }
-        }
-
-        scope.startDecimalUp = function() {
-          scope.increaseDecimal();
-          scope.timeoutUpID = setTimeout(function() {
-            scope.intervalUpID = setInterval(function(){
-              scope.increaseDecimal();
-            }, 100)
-          }, 600)
         };
 
         scope.stopDecimalUp = function() {
@@ -157,19 +146,15 @@
           clearTimeout(scope.timeoutUpID);
         };
 
-        scope.startDecimalDownPC = function() {
-          if(!ionic.Platform.isWebView()) {
-            scope.startDecimalDown();
+        scope.startDecimalDown = function(d) {
+         if ((scope.useNgTouch && d == 'touch') || (!scope.useNgTouch && d == 'mouse')) {
+            scope.decreaseDecimal();
+            scope.timeoutDownID = setTimeout(function() {
+              scope.intervalDownID = setInterval(function(){
+                scope.decreaseDecimal();
+              }, 100)
+            }, 600)
           }
-        }
-
-        scope.startDecimalDown = function() {
-          scope.decreaseDecimal();
-          scope.timeoutDownID = setTimeout(function() {
-            scope.intervalDownID = setInterval(function(){
-              scope.decreaseDecimal();
-            }, 100)
-          }, 600)
         };
 
         scope.stopDecimalDown = function() {
