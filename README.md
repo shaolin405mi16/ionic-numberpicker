@@ -52,6 +52,20 @@ $scope.numberPickerObject = {
 };
 ````
 
+5) Add directive to your html template similar to:
+
+````html
+<div class="item item-input">
+    <span class="input-label">Weight</span>
+    <ionic-numberpicker input-obj="numberPickerObject">
+      <button class="button button-positive order-button">
+        <i class="ion-archive"></i>
+      </button>
+    </ionic-numberpicker>&nbsp;
+    <b>{{ weight }} {{ weightType }}</b>
+</div>
+````
+
 ##Versions:
 
 ### 2) v1.1
