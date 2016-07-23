@@ -53,7 +53,21 @@ $scope.numberPickerObject = {
 };
 ````
 
-5) (optional) Install 'ngTouch' by https://github.com/nglar/ngTouch to get (pseudo-)autorepeat increment/decrement feature on touch panels. Also, remember to set useNgTouch to true.
+5) Add directive to your html template similar to:
+
+````html
+<div class="item item-input">
+    <span class="input-label">Weight</span>
+    <ionic-numberpicker input-obj="numberPickerObject">
+      <button class="button button-positive order-button">
+        <i class="ion-archive"></i>
+      </button>
+    </ionic-numberpicker>&nbsp;
+    <b>{{ weight }} {{ weightType }}</b>
+</div>
+````
+
+6) (optional) Install 'ngTouch' by https://github.com/nglar/ngTouch to get (pseudo-)autorepeat increment/decrement feature on touch panels. Also, remember to set useNgTouch to true.
 
 ##Versions:
 
