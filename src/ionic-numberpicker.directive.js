@@ -13,18 +13,19 @@
       restrict: 'AE',
       replace: true,
       scope: {
-        inputObj: "=inputObj"
+        inputObj: "=inputObj",
+        inputValue: '=',
+        callback: '=',
+        titleLabel: '='
       },
       link: function (scope, element, attrs) {
 
         //set up base variables and options for customization
-        scope.inputValue = scope.inputObj.inputValue ? scope.inputObj.inputValue : 0;
         scope.minValue = typeof(scope.inputObj.minValue !== 'undefined') ? scope.inputObj.minValue : -9007199254740991;
         scope.maxValue = typeof(scope.inputObj.maxValue !== 'undefined') ? scope.inputObj.maxValue : 9007199254740991;
         scope.precision = scope.inputObj.precision ? scope.inputObj.precision : 3;
         scope.format = scope.inputObj.format ? scope.inputObj.format : 'DECIMAL';
         scope.unit = scope.inputObj.unit ? scope.inputObj.unit : '';
-        scope.titleLabel = scope.inputObj.titleLabel ? scope.inputObj.titleLabel : 'Number Picker';
         scope.setLabel = scope.inputObj.setLabel ? scope.inputObj.setLabel : 'Set';
         scope.closeLabel = scope.inputObj.closeLabel ? scope.inputObj.closeLabel : 'Close';
         scope.decimalStep = scope.inputObj.decimalStep ? scope.inputObj.decimalStep : .25;
@@ -224,7 +225,7 @@
                   text: scope.closeLabel,
                   type: scope.closeButtonType,
                   onTap: function (e) {
-                    scope.inputObj.callback(undefined);
+                    scope.callback(undefined);
                   }
                 },
                 {
@@ -232,9 +233,9 @@
                   type: scope.setButtonType,
                   onTap: function (e) {
                     scope.loadingContent = true;
-        
+
                     scope.numericValue = Number(scope.isNegative ? -scope.wholeNumber : scope.wholeNumber) + Number(strip(scope.decimalNumber, scope.precision));
-                    scope.inputObj.callback(scope.numericValue);
+                    scope.callback(scope.numericValue);
                   }
                 }
               ]
@@ -258,7 +259,7 @@
                   text: scope.closeLabel,
                   type: scope.closeButtonType,
                   onTap: function (e) {
-                    scope.inputObj.callback(undefined);
+                    scope.callback(undefined);
                   }
                 },
                 {
@@ -267,7 +268,7 @@
                   onTap: function (e) {
                     scope.loadingContent = true;
 
-                    scope.inputObj.callback(scope.isNegative ? -scope.wholeNumber : scope.wholeNumber);
+                    scope.callback(scope.isNegative ? -scope.wholeNumber : scope.wholeNumber);
                   }
                 }
               ]
